@@ -102,3 +102,15 @@
     color: #CC3B33;
 }
 
+#chat_id{
+    width: 5%;
+}
+.id_submit{
+    padding: 0;
+    margin: 0;
+    width: 1%;
+}
+.id_submit:hover{
+    background-color: gray;
+    color: black;
+}
