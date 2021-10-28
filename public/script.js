@@ -1,4 +1,4 @@
-const socket = io('/');
+const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   path: '/peerjs',
@@ -27,19 +27,16 @@ navigator.mediaDevices.getUserMedia({
     connectToNewUser(userId, stream)
   })
   // input value
-  let text = $("input[id='chat_message']");
-  let nickName = $("input[id='chat_id']");
+  let text = $("input");
   // when press enter send message
   $('html').keydown(function (e) {
     if (e.which == 13 && text.val().length !== 0) {
-      socket.emit('nickName', nickName.val());
       socket.emit('message', text.val());
-      nickName.val('');
-      text.val('')     
+      text.val('')
     }
   });
-  socket.on("createMessage",nickName ,message => {
-    $("ul").append(`<li class="message"><b>${nickName}</b><br/>${message}</li>`);
+  socket.on("createMessage", message => {
+    $("ul").append(`<li class="message"><b>익명</b><br/>${message}</li>`);
     scrollToBottom()
   })
 })
