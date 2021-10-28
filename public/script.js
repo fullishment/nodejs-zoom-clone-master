@@ -32,14 +32,14 @@ navigator.mediaDevices.getUserMedia({
   // when press enter send message
   $('html').keydown(function (e) {
     if (e.which == 13 && text.val().length !== 0) {
-      socket.emit('selfData', nickName.val());
+      socket.emit('nickName', nickName.val());
       socket.emit('message', text.val());
       nickName.val('');
       text.val('')     
     }
   });
-  socket.on("createMessage",selfData ,message => {
-    $("ul").append(`<li class="message"><b>${selfData}</b><br/>${message}</li>`);
+  socket.on("createMessage",nickName ,message => {
+    $("ul").append(`<li class="message"><b>${nickName}</b><br/>${message}</li>`);
     scrollToBottom()
   })
 })
