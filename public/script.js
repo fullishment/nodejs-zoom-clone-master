@@ -32,7 +32,7 @@ navigator.mediaDevices.getUserMedia({
   // when press enter send message
   $('html').keydown(function (e) {
     if (e.which == 13 && text.val().length !== 0) {
-      socket.emit('message',( text2.val()+"+<br>+"+text.val()));
+      socket.emit('message',( input_id.val()+"<br>"+text.val()));
       text.val('')
     }
   });
@@ -125,6 +125,7 @@ const setStopVideo = () => {
   `
   document.querySelector('.main__video_button').innerHTML = html;
 }
+const id_input = prompt('id를입력하세요');
 
 const setPlayVideo = () => {
   const html = `
