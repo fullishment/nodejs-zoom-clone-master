@@ -125,7 +125,6 @@ const setStopVideo = () => {
   `
   document.querySelector('.main__video_button').innerHTML = html;
 }
-const chat_id = prompt('id입력');
 
 const setPlayVideo = () => {
   const html = `

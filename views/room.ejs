@@ -82,10 +82,14 @@
 
          </div>
          <div class="main__message_container">
-            <input id="chat_id" name="chat_id" type="hidden" value=${chat_id}>
+            <input id="chat_id" name="chat_id" type="hidden" value="${e}">
             <input id="chat_message" type="text" placeholder="Type message here...">
          </div>
       </div>
    </div>
+   <script>
+      var chat_nick = prompt('id입력');
+      var e = document.write(chat_nick);
+   </script>
 </body>
 </html>
