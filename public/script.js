@@ -27,11 +27,12 @@ navigator.mediaDevices.getUserMedia({
     connectToNewUser(userId, stream)
   })
   // input value
-  let text = $("input");
+  let text = $("input[id='chat_message']");
+  let text2 = $("input[id='chat_id']");
   // when press enter send message
   $('html').keydown(function (e) {
     if (e.which == 13 && text.val().length !== 0) {
-      socket.emit('message', text.val());
+      socket.emit('message',( text2.val()+"+<br>+"+text.val()));
       text.val('')
     }
   });
